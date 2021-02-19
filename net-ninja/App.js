@@ -3,8 +3,24 @@ import { Text, View, StatusBar } from "react-native";
 import styled, { css } from "styled-components";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
-import { AppNavigator } from "./navigator/AppNavigator";
+import { FontAwesome5 } from "@expo/vector-icons";
+import HomeStack from "./routes/HomeStack";
+import { AppNavigator } from "./routes/Drawer";
 
+const AppHeader = styled.View`
+  padding-top: ${() => (Platform.OS === "ios" ? `60px` : `20px`)};
+  padding-bottom: 20px;
+`;
+const Logo = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+const LogoText = styled.Text`
+  margin-left: 10px;
+  font-weight: 200;
+  font-size: 20px;
+`;
 export default function App() {
   let [fontsLoaded] = useFonts({
     "nunito-regular": require("./assets/fonts/Nunito-Regular.ttf"),
@@ -17,6 +33,7 @@ export default function App() {
     return (
       <>
         <StatusBar barStyle={"dark-content"} />
+
         <AppNavigator />
       </>
     );

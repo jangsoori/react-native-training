@@ -1,10 +1,8 @@
 import React from "react";
 import { View, Text } from "react-native";
 import styled from "styled-components";
+import { Container } from "../styles/global";
 
-const Container = styled.View`
-  padding: 24px;
-`;
 export default function About() {
   return (
     <Container>
