@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 import styled from "styled-components";
+import Card from "../shared/Card";
 import { Container, Paragraph, TitleText, Header } from "../styles/global";
 import { renderStars } from "./Home";
 
@@ -12,11 +13,11 @@ export default function ReviewDetails(props) {
   const { body, key, rating, title } = props.route.params;
   return (
     <Container>
-      <Header>
+      <Card>
         <TitleText>{title}</TitleText>
         <Rating>{renderStars(rating && rating)}</Rating>
-      </Header>
-      <Paragraph>{body}</Paragraph>
+        <Paragraph>{body}</Paragraph>
+      </Card>
     </Container>
   );
 }

@@ -1,6 +1,6 @@
-import { View, Text, Platform } from "react-native";
+import { View, Text, Platform, TextInput } from "react-native";
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.View`
   flex: 1;
@@ -23,4 +23,18 @@ export const TitleText = styled.Text`
 `;
 export const Paragraph = styled.Text`
   line-height: 20px;
+`;
+
+export const Input = styled.TextInput`
+  background: #fff;
+  font-size: 18px;
+  elevation: 5;
+  border: 1px solid #aaa;
+  padding: 5px 10px;
+  border-radius: 5px;
+  ${({ hasError }) =>
+    hasError &&
+    css`
+      border: 1px solid #cf281f;
+    `}
 `;
