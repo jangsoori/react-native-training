@@ -1,11 +1,14 @@
 import React from "react";
 import AuthProvider from "./AuthProvider";
-import Routes from "./Routes";
+import DataProvider from "./DataProvider";
+import Routes from "../Nav/Routes";
 
 export default function Providers({ children }) {
   return (
     <AuthProvider>
-      <Routes />
+      <DataProvider>
+        <Routes />
+      </DataProvider>
     </AuthProvider>
   );
 }

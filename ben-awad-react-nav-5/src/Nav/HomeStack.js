@@ -1,10 +1,12 @@
 import React from "react";
-import { Button } from "react-native";
+import { Button, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeFeed from "./Screens/HomeFeed";
-import { AuthContext } from "./AuthProvider";
-import Item from "./Screens/Item";
-
+import HomeFeed from "../Screens/HomeFeed";
+import { AuthContext } from "../Context/AuthProvider";
+import Item from "../Screens/Item";
+import EditItem from "../Screens/EditItem";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { addItemRoutes } from "../Logic/addItemRoutes";
 const Stack = createStackNavigator();
 export default function HomeStack() {
   const { logout } = React.useContext(AuthContext);
@@ -16,13 +18,7 @@ export default function HomeStack() {
       }}
     >
       <Stack.Screen name="HomeFeed" component={HomeFeed} />
-      <Stack.Screen
-        name="Item"
-        component={Item}
-        options={({ route }) => ({
-          headerTitle: route.params.name,
-        })}
-      />
+      {addItemRoutes(Stack)}
     </Stack.Navigator>
   );
 }

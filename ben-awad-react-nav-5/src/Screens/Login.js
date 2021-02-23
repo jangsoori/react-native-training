@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Button, TextInput } from "react-native";
 import styled from "styled-components";
-import { AuthContext } from "../AuthProvider";
+import { AuthContext } from "../Context/AuthProvider";
 import Center from "../Components/shared/Center";
 
 export default function Login({ navigation }) {

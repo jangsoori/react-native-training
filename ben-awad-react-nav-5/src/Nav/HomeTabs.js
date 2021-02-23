@@ -1,8 +1,8 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Search from "./Screens/Search";
 import { Ionicons } from "@expo/vector-icons";
 import HomeStack from "./HomeStack";
+import SearchStack from "./SearchStack";
 const BottomTabs = createBottomTabNavigator();
 
 export default function HomeTabs() {
@@ -27,7 +27,7 @@ export default function HomeTabs() {
       />
       <BottomTabs.Screen
         name="Search"
-        component={Search}
+        component={SearchStack}
         options={{
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons name="ios-search" size={size} color={color} />
